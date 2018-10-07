@@ -23,7 +23,7 @@ public class DataSourceConfig {
     }
 
     @Bean
-    public JdbcTemplate mysqlJdbcTemplate(@Qualifier("mysqlDataSource") DataSource dataSource) {
+    public JdbcTemplate mysqlJdbcTemplate(DataSource dataSource) {
         return new JdbcTemplate(dataSource);
     }
 
