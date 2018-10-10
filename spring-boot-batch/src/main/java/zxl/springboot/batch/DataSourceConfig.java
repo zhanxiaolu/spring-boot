@@ -18,12 +18,12 @@ public class DataSourceConfig {
 
     @Bean
     @ConfigurationProperties(prefix = "spring.datasource")
-    public DataSource mysqlDataSource() {
+    public DataSource dataSource() {
         return DataSourceBuilder.create().build();
     }
 
     @Bean
-    public JdbcTemplate mysqlJdbcTemplate(DataSource dataSource) {
+    public JdbcTemplate jdbcTemplate(DataSource dataSource) {
         return new JdbcTemplate(dataSource);
     }
 

@@ -13,7 +13,7 @@ import zxl.springboot.batch.domain.Person;
 public class PersonProcessor implements ItemProcessor<Person, Person> {
     @Override
     public Person process(Person person) throws Exception {
-        person.setId(System.currentTimeMillis());
+        person.setId(System.nanoTime());
         log.info("PersonProcessor:{}", person.toString());
         return person;
     }
