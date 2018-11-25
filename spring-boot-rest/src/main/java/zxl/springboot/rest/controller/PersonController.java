@@ -14,6 +14,13 @@ public class PersonController {
     private static final String template = "Hello, %s!";
     private final AtomicLong counter = new AtomicLong();
 
+    @RequestMapping(value = "/person/{name}",method = RequestMethod.GET)
+    public String getPersonName(@PathVariable("name") String name) {
+        log.info("request person/{}",name);
+        return "i'm "+name;
+
+    }
+
     @RequestMapping(value = "/person/{id}",method = RequestMethod.POST)
     public String getPersonId(@PathVariable("id") Long id) {
         log.info("request person/{}",id);
